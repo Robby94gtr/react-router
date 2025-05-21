@@ -5,7 +5,7 @@ const Homepage = () => {
     return (
         <>
             <MainNav />
-            <div>Homepage</div>
+            <h1 className='text-center my-5'>HOMEPAGE</h1>
         </>
     )
 }

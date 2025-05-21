@@ -5,7 +5,7 @@ const Products = () => {
     return (
         <>
             <MainNav />
-            <div>Products</div>
+            <h1 className='text-center my-5'>PRODOTTI</h1>
         </>
     )
 }

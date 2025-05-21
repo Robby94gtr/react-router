@@ -1,0 +1,13 @@
+.nav-list a {
+  color: black;
+  text-decoration: none !important;
+}
+
+.nav-list a.active {
+  font-weight: 700;
+  border: 2px solid rgb(58, 139, 226);
+  background-color: rgb(58, 139, 226);
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+}

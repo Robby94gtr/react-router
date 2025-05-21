@@ -5,7 +5,7 @@ const ChiSiamo = () => {
     return (
         <>
             <MainNav />
-            <div>ChiSiamo</div>
+            <h1 className='text-center my-5'>CHI SIAMO</h1>
         </>
     )
 }
