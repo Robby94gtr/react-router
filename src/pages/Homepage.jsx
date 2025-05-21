@@ -1,8 +1,12 @@
 import React from 'react'
+import MainNav from '../components/MainNav'
 
 const Homepage = () => {
     return (
-        <div>Homepage</div>
+        <>
+            <MainNav />
+            <div>Homepage</div>
+        </>
     )
 }
 

@@ -1,8 +1,12 @@
 import React from 'react'
+import MainNav from '../components/MainNav'
 
 const Products = () => {
     return (
-        <div>Products</div>
+        <>
+            <MainNav />
+            <div>Products</div>
+        </>
     )
 }
 
