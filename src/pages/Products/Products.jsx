@@ -1,5 +1,5 @@
 import React from 'react'
-import MainNav from '../components/MainNav'
+import MainNav from '../../components/MainNav'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
