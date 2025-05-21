@@ -1,15 +1,20 @@
 import React from 'react'
 import MainNav from '../components/MainNav'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const Products = () => {
-    const [products, setProducts] = useState([]);
+    const [items, setItems] = useState([]);
 
-    getProducts(() => {
+    const getProducts = (() => {
         axios.get("https://fakestoreapi.com/products").then((resp) => {
-            setProducts(resp.data);
+            setItems(resp.data);
         })
     })
+
+    useEffect(() => {
+        getProducts();
+    }, [])
     return (
         <>
             <MainNav />
@@ -19,18 +24,22 @@ const Products = () => {
                         <h1 className='text-center my-3'>PRODOTTI</h1>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-12 col-md-6 col-lg-4">
-                        <div className="card">
-                            <img src="" className="card-img-top img-fluid" alt="" ></img>
-                            <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-description">description</p>
-                                <p className="card-price">price</p>
-                                <a href="#" className="btn btn-primary">share</a>
+                <div className="row gy-3">
+                    {items.map((item) => {
+                        return < div key={item.id} className="col-12 col-md-6 col-lg-4" >
+                            <div className="card">
+                                <img src={item.image} className="card-img-top img-fluid" alt="" />
+                                <div className="card-body">
+                                    <h5 className="card-title text-center">{item.title}</h5>
+                                    <p className="card-description text-center">{item.description}</p>
+                                    <p className="card-price text-center">{`${item.price} \u20AC`}</p>
+                                    <div className='d-flex justify-content-center'>
+                                        <button type="button" className="btn btn-primary">Share</button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        </div >
+                    })}
                 </div>
             </div>
         </>
