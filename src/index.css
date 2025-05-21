@@ -31,4 +31,17 @@
 
 .card-img-top {
     width: 50%;
+    }
+
+.img-container {
+  width: 200px;
+  height: 200px;
+}
+
+.img-container img {
+  width: 100%;
+}
+
+.product-info {
+  margin-top: 100px;
 }

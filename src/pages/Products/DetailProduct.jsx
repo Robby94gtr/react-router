@@ -11,14 +11,34 @@ const DetailProduct = () => {
 
     const [product, setProduct] = useState({});
 
-    getProduct(() => {
+    const getProduct = (() => {
         axios.get(`https://fakestoreapi.com/products/${id}`).then((resp) => {
-            setProduct(resp.data)
+            setProduct(resp.data);
+            console.log(resp.data);
         })
     })
 
+    useEffect(() => {
+        getProduct();
+    }, []);
+
     return (
-        <div>Dettaglio prodotto</div>
+        <div>
+            <div className="container">
+                <div className="row">
+                    <div className="col-12">
+                        <h1>{product.title}</h1>
+                        <div className="img-container">
+                            <img src={product.image} alt="" />
+                        </div>
+                        <div className="product-info">
+                            <p>{product.price}</p>
+                            <p>{product.description}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 }
 

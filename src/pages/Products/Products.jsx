@@ -35,7 +35,7 @@ const Products = () => {
                                     <p className="card-description text-center">{item.description}</p>
                                     <p className="card-price text-center">{`${item.price} \u20AC`}</p>
                                     <div className='d-flex justify-content-center'>
-                                        <NavLink to={`/Products/:${item.id}`}><button type="button" className="btn btn-primary">Dettaglio prodotto</button></NavLink>
+                                        <NavLink to={`/Prodotti/${item.id}`}><button type="button" className="btn btn-primary">Dettaglio prodotto</button></NavLink>
                                     </div>
                                 </div>
                             </div>
