@@ -3,6 +3,13 @@ import MainNav from '../components/MainNav'
 import { useState } from 'react'
 
 const Products = () => {
+    const [products, setProducts] = useState([]);
+
+    getProducts(() => {
+        axios.get("https://fakestoreapi.com/products").then((resp) => {
+            setProducts(resp.data);
+        })
+    })
     return (
         <>
             <MainNav />
