@@ -2,6 +2,7 @@ import React from 'react'
 import MainNav from '../../components/MainNav'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { NavLink } from 'react-router-dom'
 
 const Products = () => {
     const [items, setItems] = useState([]);
@@ -34,7 +35,7 @@ const Products = () => {
                                     <p className="card-description text-center">{item.description}</p>
                                     <p className="card-price text-center">{`${item.price} \u20AC`}</p>
                                     <div className='d-flex justify-content-center'>
-                                        <button type="button" className="btn btn-primary">Share</button>
+                                        <NavLink to={`/Products/:${item.id}`}><button type="button" className="btn btn-primary">Dettaglio prodotto</button></NavLink>
                                     </div>
                                 </div>
                             </div>
